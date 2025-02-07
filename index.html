@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Horizons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="0111(1).webm" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div> 
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Account Login</a></li>
+                <li><a href="countries.html">Country Details</a></li>
+                <li><a href="contact.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Global Horizons</h1>
+        <p><span class="typing-effect"><b>Unlocking Doors to a World of Opportunities</b></span></p>
+        <a href="countries.html"><button>Take a Tour</button></a>
+    </main>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+         const elementsToAnimate = document.querySelectorAll("main h1,main p, main button");
+         elementsToAnimate.forEach((el, index) => {
+         setTimeout(() => {
+            el.classList.add("fade-slide-in");
+        }, index * 500); 
+        });
+        });
+       
+        
+
+
+    </script>
+</body>
+</html>

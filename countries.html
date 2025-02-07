@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Horizons</title>
+    <link rel="stylesheet" href="countriestyle.css">
+</head>
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div> 
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Account Login</a></li>
+                <li><a href="countries.html">Country Details</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Where are you thinking of studying or working?</h1>
+        <div class="container">
+            <div class="image-container">
+                <a href="countries/sweden.html"><img src="images/sweden.jpeg" alt="Sweden"></a>
+                <h3>SWEDEN</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/finland.html"><img src="images/finland.jpg" alt="Finland"></a>
+                <h3>FINLAND</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/denmark.html"><img src="images/denmark.jpeg" alt="Denmark"></a>
+                <h3>DENMARK</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/austria.html"><img src="images/austria.jpg" alt="Austria"></a>
+                <h3>AUSTRIA</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/spain.html"><img src="images/spain.jpg" alt="Spain"></a>
+                <h3>SPAIN</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/latvia.html"><img src="images/Latvia.jpg" alt="Latvia"></a>
+                <h3>LATVIA</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/uk.html"><img src="images/uk.jpg" alt="UK"></a>
+                <h3>ENGLAND</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/australia.html"><img src="images/australia.jpg" alt="Australia"></a>
+                <h3>AUSTRALIA</h3>
+            </div>
+            <div class="image-container">
+                <a href="countries/canada.html"><img src="images/canada.jpeg" alt="Canada"></a>
+                <h3>CANADA</h3>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+         const imageContainers = document.querySelectorAll(".image-container");
+
+    
+        const observer = new IntersectionObserver(
+         (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate"); 
+                    observer.unobserve(entry.target); 
+                }
+            });
+        },
+        { threshold: 0.1 } 
+        );
+
+    
+        imageContainers.forEach((container) => observer.observe(container));
+         });
+
+        document.addEventListener("DOMContentLoaded", () => {
+         const imageContainers = document.querySelectorAll(".image-container");
+         const heading = document.querySelector("main h1"); 
+
+    
+        heading.animate(
+         [
+            { opacity: 0, transform: "translateY(-50px)" }, 
+            { opacity: 1, transform: "translateY(0)" } 
+         ],
+        {
+            duration: 1000, 
+            easing: "ease-out", 
+            fill: "forwards", 
+        }
+        );
+
+    
+        const observer = new IntersectionObserver(
+         (entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("animate"); 
+                    }, index * 200); 
+                    observer.unobserve(entry.target); 
+                }
+            });
+         },
+         { threshold: 0.1 } 
+        );
+
+   
+        imageContainers.forEach((container) => observer.observe(container));
+         });
+
+
+    </script>
+</body>
+</html>

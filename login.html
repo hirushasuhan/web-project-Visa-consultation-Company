@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Horizons</title>
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Account Login</a></li>
+                <li><a href="countries.html">Country Details</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form>
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username">
+                    <span class="icon">👤</span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password">
+                    <span class="icon">🔒</span>
+                </div>
+                <div class="options">
+                    <div class="rememberMe">
+                        <input type="checkbox">
+                        <p>Remember Me</p>
+                    </div>
+                    <a href="#login_to_the_service_potral"> Forgot password</a>
+                </div>
+                <button type="submit" href="#login_to_the_service_potral">Login</button>
+            </form><br>
+           <b> <p>Or login with</p></b>
+            <div class="social-login">
+                <a href="#google_login_api" class="google-login">
+                    <img src="google.png" alt="Google" /> Google
+                </a>
+                <a href="#fb_login_api" class="fb-login">
+                    <img src="facebook.png" alt="Facebook" /> Facebook
+                </a>
+            </div>
+            <p>Don’t have an account? <a href="#login_to_the_service_potral">Register</a></p>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+         const loginContainer = document.querySelector(".login-container");
+
+    
+        setTimeout(() => {
+         loginContainer.classList.add("active");
+        }, 300); 
+        });
+
+    </script>
+</body>
+
+</html>
